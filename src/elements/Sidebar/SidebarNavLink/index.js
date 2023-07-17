@@ -11,11 +11,13 @@ export function SidebarNavLink({
 }) {
   return (
     <NavLink
-      Icon={Cube}
       href={href}
       {...props}
     >
-      {children}
+      <Icon size={28} />
+      <span className="sidebar-nav-link-title">
+        {children}
+      </span>
     </NavLink>
   )
 }
