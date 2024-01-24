@@ -13,6 +13,12 @@ export function SidebarNavLink({
     <NavLink
       href={href}
       {...props}
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 10,
+        padding: 10
+      }}
     >
       <Icon size={28} />
       <span className="sidebar-nav-link-title">

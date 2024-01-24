@@ -9,7 +9,7 @@ export function SidebarGroup({
   return (
     <div className="sidebar-group" {...props}>
       <div className="sidebar-group-title">{name}</div>
-      <div className="sidebar-grou-items">{children}</div>
+      <div className="sidebar-group-items">{children}</div>
     </div>
   )
 }

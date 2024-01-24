@@ -3,7 +3,7 @@ import React from 'react';
 import { t } from 'i18next';
 
 import { useNavigate } from 'react-router-dom'; 
-import { Button } from '../../elements/Button';
+import { Button } from '../../components/Button';
 import { createNewGame } from '../../actions/game';
 
 export function SplashPage() {

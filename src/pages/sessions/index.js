@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useNavigate } from 'react-router-dom'; 
-import { Button } from '../../elements/Button';
+import { Button } from '../../components/Button';
 import { createNewGame } from '../../actions/game';
 import { useGame } from '../../hooks/game';
 

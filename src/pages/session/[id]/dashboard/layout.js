@@ -1,13 +1,13 @@
 import React, { useState, createContext } from 'react';
 
-import { Sidebar } from '../../../../elements/Sidebar';
-import { SidebarSection } from '../../../../elements/Sidebar/SidebarSection';
-import { SidebarGroup } from '../../../../elements/Sidebar/SidebarGroup';
-import { SidebarNavLink } from '../../../../elements/Sidebar/SidebarNavLink';
+import { Sidebar } from '../../../../components/Sidebar';
+import { SidebarSection } from '../../../../components/Sidebar/SidebarSection';
+import { SidebarGroup } from '../../../../components/Sidebar/SidebarGroup';
+import { SidebarNavLink } from '../../../../components/Sidebar/SidebarNavLink';
 
 import { t } from 'i18next';
 import { Outlet } from 'react-router';
-import { ViewStack } from '../../../../elements/ViewStack';
+import { ViewStack } from '../../../../components/ViewStack';
 import { Envelope, List, ListBullets } from 'phosphor-react';
 
 

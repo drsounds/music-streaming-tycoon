@@ -40,7 +40,8 @@ function App() {
                   <Route element={<OnboardingStep1Page />} path="step1" />
                 </Route>
    
-                <Route element={<DashboardLayout />} path="dashboard">               <Route element={<InboxPage />} path="inbox" />
+                <Route element={<DashboardLayout />} path="dashboard">
+                  <Route element={<InboxPage />} path="inbox" />
                 </Route>
               </Route>
             </Route>

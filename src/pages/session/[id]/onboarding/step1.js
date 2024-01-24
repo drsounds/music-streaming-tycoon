@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { setCurrentSessionName } from '../../../../actions/game';
 import { useNavigate } from 'react-router';
-import { Button } from '../../../../elements/Button';
+import { Button } from '../../../../components/Button';
 
 export function OnboardingStep1Page() {
   const [name, setName] = useState('')

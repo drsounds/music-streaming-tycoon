@@ -2,7 +2,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { persistReducer } from 'redux-persist';
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-import thunk from 'redux-thunk'
+import { thunk } from 'redux-thunk'
 
 import trackReducer from '../reducers/track'
 import artistReducer from '../reducers/artist'
