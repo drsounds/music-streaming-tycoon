@@ -1,13 +1,12 @@
 import React from 'react';
 
-import { useSession } from '../../../hooks/session';
-import { Outlet } from 'react-router';
+import { useSession } from '@/hooks/session';
 
 export function SessionLayout({
-
+  children
 }) {
   const session = useSession()
   if (session) {
-    return <Outlet />
+    return children
   }
 }

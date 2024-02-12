@@ -1,22 +1,23 @@
 import React, { useMemo } from 'react';
 
-import { Link, useLocation } from 'react-router-dom';
+import NextLink from 'next/link';
+import { useRouter } from 'next/router';
 
 export function NavLink({
   children,
   href,
   ...props
 }) {
-  const location = useLocation()
-  const isActive = useMemo(() => location.pathname.indexOf(href) === 0, [href, location])
+  const router = useRouter()
+  const isActive = useMemo(() => router.asPath.indexOf(href) === 0, [href, location])
 
   return (
-    <Link
-      className={`nav-link nav-link-${isActive}`}
-      href={props.href}
+    <NextLink
+      className={`nav-link${isActive ? ' nav-link-active' : ''}`}
+      href={href}
       {...props}
     >
       {children}
-    </Link>
+    </NextLink>
   )
 }

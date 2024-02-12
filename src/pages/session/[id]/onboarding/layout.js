@@ -1,10 +1,9 @@
 import React from 'react';
-import { Outlet } from 'react-router';
 
-export function OnboardingLayout() {
+export function OnboardingLayout({ children }) {
   return (
     <div className="splash dark">
-      <Outlet />
+      {children}
     </div>
   )
 }

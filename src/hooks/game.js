@@ -1,8 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+
+import { useLocalForage } from '@zikwall/use-localforage'
 
 export function useGame() {
-  return useSelector(state => {
-    return state.game
-  })
+  return useLocalForage('game')
 }

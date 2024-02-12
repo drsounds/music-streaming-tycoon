@@ -108,32 +108,40 @@ export function CurrencyComponent({
 }
 
 export function NodeTable({
-    nodes,
+    nodes=[],
     orderByField,
     orderByDirection='asc',
-    visibleColumns
-}) {
+    visibleColumns=[],
+    columns=[],
+    ...props
+}) { 
     return (
-        <Table>
+        <Table {...props}>
             <TableHead>
                 <TableRow>
-                    {visibleColumns.map(column => (
-                        <TableHeaderCell>
-                            {column.name ?? column.id}
-                        </TableHeaderCell>
-                    ))}
+                    {visibleColumns.map(columnId => {
+                        const column = columns[columnId]
+                        return (
+                            <TableHeaderCell>
+                                {column.name ?? column.id}
+                            </TableHeaderCell>
+                        )
+                    })}
                 </TableRow>
             </TableHead>
             <TableBody>
                 {nodes.map(node => (
                     <TableRow key={node.id}>
-                        {visibleColumns.map(column => (
-                            <NodeTableCell 
-                                key={column.id}
-                                column={column}
-                                node={node}
-                            />
-                        ))}
+                        {visibleColumns.map(columnId => {
+                            const column = columns[columnId]
+                            return (
+                                <NodeTableCell 
+                                    key={column.id}
+                                    column={column}
+                                    node={node}
+                                />
+                            )
+                        })}
                     </TableRow>
                 ))}
             </TableBody>

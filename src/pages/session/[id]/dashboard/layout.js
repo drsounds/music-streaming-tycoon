@@ -5,10 +5,8 @@ import { SidebarSection } from '../../../../components/Sidebar/SidebarSection';
 import { SidebarGroup } from '../../../../components/Sidebar/SidebarGroup';
 import { SidebarNavLink } from '../../../../components/Sidebar/SidebarNavLink';
 
-import { t } from 'i18next';
-import { Outlet } from 'react-router';
 import { ViewStack } from '../../../../components/ViewStack';
-import { Envelope, List, ListBullets } from 'phosphor-react';
+import { Envelope, ListBullets } from 'phosphor-react';
 
 
 export const DashboardLayoutContext = createContext({
@@ -17,7 +15,7 @@ export const DashboardLayoutContext = createContext({
 })
 
 
-export function DashboardLayout() {
+export function DashboardLayout({ children }) {
   const [sidebarExpanded, setSidebarExpanded] = useState(true)
   return (
     <DashboardLayoutContext.Provider value={{ sidebarExpanded, setSidebarExpanded }}>
@@ -31,7 +29,7 @@ export function DashboardLayout() {
           </SidebarSection>
         </Sidebar>
         <ViewStack style={{ flex: 1 }}>
-          <Outlet />
+          {children}
         </ViewStack>
       </div>
     </DashboardLayoutContext.Provider>

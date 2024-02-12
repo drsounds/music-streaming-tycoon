@@ -1,10 +1,5 @@
-import { useSelector } from "react-redux"
-import { useParams } from "react-router"
+import { useLocalForage } from '@zikwall/use-localforage'
 
 export function useSession() {
-  const {
-    sessionId
-  } = useParams()
-  const session = useSelector(state => state.session[sessionId])
-  return session
+  return useLocalForage('session')
 }

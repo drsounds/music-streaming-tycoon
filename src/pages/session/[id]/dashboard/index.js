@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 
-import { useNavigate } from 'react-router';
-import { createNewGame } from '../../../../actions/game';
+import { useRouter } from 'next/router'
+
+import { createNewGame } from '@/actions/game';
 
 export function DashboardIndexPage() {
-  const navigate = useNavigate()
+  const router = useRouter()
   useEffect(() => {
     const session = createNewGame()
-    navigate(`./session/${session.slug}/dashboard`)
+    router.push({ hostname: './session/[sessionId]/dashboard', query: { sessionId: session.slug }})
   }, [])
   return (
     <div></div>

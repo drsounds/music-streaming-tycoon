@@ -58,3 +58,7 @@ export function createNewGame(number) {
   )
   return session;
 }
+
+function generatePitchEmail() {
+    
+}
